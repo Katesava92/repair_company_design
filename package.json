@@ -18,6 +18,10 @@
   "homepage": "https://github.com/Katesava92/repair_company_design#readme",
   "devDependencies": {
     "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0"
+  },
+  "dependencies": {
+    "gulp-rename": "^2.0.0"
   }
 }
