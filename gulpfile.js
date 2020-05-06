@@ -5,30 +5,46 @@ function defaultTask(cb) {
 
 exports.default = defaultTask
 
-const gulp = require("gulp");
+const {src, dest, watch} = require("gulp");
 const browserSync = require("browser-sync").create();
 const cleanCSS = require("gulp-clean-css");
 const renameCss = require("gulp-rename");
+const sass = require("gulp-sass");
 
 
 
-gulp.task("hello", function (done) {
-  console.log("Привет, мир!");
-  done();
-});
 
-gulp.task("browser-sync", function() {
+
+
+function bs() {
+  serveSass();
   browserSync.init({
       server: {
           baseDir: "./"
       }
   });
-  gulp.watch("./*.html").on("change", browserSync.reload);
-});
+  watch("./*.html").on("change", browserSync.reload);
+  watch("./sass/**/*.", serveSass);
+  watch("./js/*.js").on("change", browserSync.reload);
+};
 
-gulp.task("minify", function() {
-  return gulp.src("./css/*.css")
+function serveSass() {
+  return src("./sass/*.sass")
+      .pipe(sass())
+      .pipe(dest("./css"))
+      .pipe(browserSync.stream());
+};
+exports.serve = bs;
+
+
+
+
+
+
+
+function min() {
+  return src("./css/*.css")
     .pipe(cleanCSS())
     .pipe(renameCss({suffix:".min"}))
-    .pipe(gulp.dest("./css"));
-});
+    .pipe(dest("./css"));
+};
