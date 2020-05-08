@@ -323,12 +323,18 @@ template {
   border: none;
   border-radius: 2px;
   text-transform: uppercase;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer; }
   .button--primary {
     background-color: #E3B873;
     color: #ffffff; }
+  .button--outline {
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff; }
 
 .container {
+  width: 85%;
   max-width: 1256px;
   margin: auto; }
 
@@ -365,6 +371,64 @@ template {
 
 .contacts__phone {
   margin-right: 45px; }
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding-top: 83px;
+  background: #131313 url("../img/hero-bg.jpg") no-repeat center/cover;
+  color: #ffffff; }
+  .hero__instagram {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 80px;
+    height: 100%; }
+  .hero__scroll-down {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 247px;
+    min-height: 97px;
+    font-size: 12px;
+    line-height: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #131313; }
+  .hero__title {
+    max-width: 670px;
+    font-size: 40px;
+    line-height: 53px;
+    text-transform: uppercase; }
+  .hero__text {
+    max-width: 500px;
+    font-size: 22px;
+    line-height: 30px; }
+  .hero__button {
+    margin-right: 20px; }
+
+.instagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #131313; }
+  .instagram__link {
+    transform: rotate(90deg);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #E3B873; }
+
+.title {
+  margin: 0;
+  font-family: 'Yeseva One', cursive; }
+  .title--primary {
+    color: #E3B873; }
 
 *, *:before, *:after {
   box-sizing: border-box; }
