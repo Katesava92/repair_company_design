@@ -10,14 +10,35 @@
     background-color: $primary
     color: $white
     box-shadow: 0px 5px 15px rgba($primary, 0.3)
-    transition: box-shadow 0.2s
+    transition: box-shadow 0.3s
     &:hover
       box-shadow: none
   &--outline
     border: 1px solid $white
     background-color: transparent
     color: $white
+    box-shadow: 0px 5px 15px rgba($white, 0.5)
+    transition: box-shadow 0.3s
+    &:hover
+      box-shadow: none
     
+
+.section
+  &-title
+    font-family: Yeseva One, cursive
+    text-align: center
+    text-transform: uppercase
+    &__image
+      display: flex
+      justify-content: center
+      align-items: center
+      &::before, &::after
+        content: ''
+        width: 32px
+        height: 2px
+        margin: 0 10px
+        background-color: $primary
+        border-radius: 30px
 
 
 

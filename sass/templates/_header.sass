@@ -13,6 +13,18 @@
 .logo
   color: $primary
   text-transform: uppercase
+  text-decoration: none
+  &::after
+    content: ''
+    display: block
+    width: 0%
+    height: 1px
+    background-color: $primary
+    transition: 0.3s
+  &:hover
+    transform: scale(1.1)
+    &::after
+      width: 100%
 .navigation
   display: flex
   justify-content: center
@@ -30,4 +42,7 @@
 .contacts
   &__phone
     margin-right: 45px
-    
+    box-shadow: none
+    transition: box-shadow 0.3s
+    &:hover
+      box-shadow: 0px 5px 15px rgba($primary, 0.3)
