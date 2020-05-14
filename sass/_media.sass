@@ -16,9 +16,35 @@
   .navigation
     display: none
 
+@media screen and ( max-width: 760px )
+  .types
+  &__section-title
+    margin-bottom: 5rem
+    font-size: 22px
+    line-height: 138.6%
+  .row
+    flex-direction: column
+    align-items: center
+  .types
+    &__card
+      margin-bottom: 4.286rem
+  .card
+    &__text
+      margin-left: 0
+    &__list
+      line-height: 22px
+      margin-bottom: 30px
+    &__pricetag
+      padding: 10px 30px
+  .design
+    &__section-title
+      font-size: 15px
+    &__card
+      margin-bottom: 4.286rem
+
 @media screen and ( max-width: 576px )
   .logo
-    font-size: 12px
+    font-size: 13px
     line-height: 14px
   .contacts
     &__phone
@@ -31,20 +57,23 @@
       display: none
   .hero
     &__content
-      max-width: 24.286rem
+      
     &__title
+      max-width: 375px
       font-size: 1.643rem
-      line-height: 132%
+      line-height: 1.786rem
     &__text
-      font-size: 1.286rem
+      max-width: 321px
+      font-size: 18px
       line-height: 135%
-      margin-bottom: 2.286rem
+      margin-bottom: 2.986rem
     &__scroll-down
       display: none
     &__button
       display: block
-      min-width: 22.857rem
-      margin-bottom: 1.857rem
+      min-width: 339px
+      padding: 19px 71px
+      margin-bottom: 2.1rem
 
 @media screen and ( max-height: 580px )  
   .hero
