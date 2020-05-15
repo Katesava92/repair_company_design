@@ -11,15 +11,21 @@ document.addEventListener('DOMContentLoaded', function(event) {  //провер�
   modalBtn.forEach(element => {
     element.addEventListener('click', toggleModal);
   });
-  closeBtn.addEventListener('click',toggleModal);
+  closeBtn.addEventListener('click', toggleModal);
 
 
-  
+
   document.addEventListener('keydown', function(e) {
     if (e.keyCode == 27) {
-      toggleModal;
+      modal.classList.toggle('modal--visible');
     }
     
+  });
+
+  document.addEventListener('click', function(window) {
+    if (window.target == modal) {
+      modal.classList.toggle('modal--visible');
+    }
   });
 
 
