@@ -43,6 +43,8 @@
       margin-bottom: 4.286rem
 
 @media screen and ( max-width: 576px )
+  .container
+    width: 90%
   .logo
     font-size: 13px
     line-height: 14px
@@ -57,40 +59,74 @@
       display: none
   .hero
     &__title
-      max-width: 375px
-      font-size: 1.643rem
-      line-height: 1.786rem
+      max-width: 320px
+      margin-top: 0
+      margin-bottom: 16px
+      font-size: 23px
+      line-height: 132.83%
     &__text
       max-width: 321px
+      margin-bottom: 32px
+      margin-top: 0
       font-size: 18px
-      line-height: 135%
-      margin-bottom: 2.986rem
+      line-height: 135.84%
     &__scroll-down
       display: none
     &__button
       display: block
-      min-width: 339px
-      padding: 19px 71px
-      margin-bottom: 2.1rem
+      max-width: 339px
+      width: 100%
+      padding: 19px 70px
+      margin-bottom: 26px
+      font-size: 13px
+      line-height: 15px
+      font-weight: 500
+  .section-title
+    &__heading
+      font-size: 22px
+      line-height: 160.6%
+      margin-top: 0px
+      margin-bottom: 14px
   .types
     &__section-title
       margin-bottom: 40px
+    &__card
+      margin-bottom: 72px
   .card
     &__text
-      max-width: 260px
-      margin-top: -123px
-      padding: 20px 40px 18px 20px
+      max-width: 270px
+      width: 100%
+      margin-top: -142px
+      padding: 21px 41px 20px 31px
     &__title
       font-size: 15px
+      line-height: 138.6%
+      margin-bottom: 6px
+    &__list
+      font-size: 13px
+      line-height: 170.8%
+      margin-bottom: 27px
     &__pricetag
       min-width: 190px
+      width: 100%
+      padding: 10px 19px
+      font-size: 16px
+      line-height: 138.6%
+      font-weight: 500
       &--align
         padding-left: 44px
   .design
+    background: $dark
+    color: $white
+    &__section-title
+      margin-bottom: 0
     &__section-text
-      margin-bottom: 13px
+      max-width: 306px
+      margin-top: 18px
       font-size: 15px
-      line-height: 153%
+      line-height: 135.84%
+    &__card
+      margin-bottom: 76px
 
 
 
