@@ -51,8 +51,8 @@ $(document).ready(function () {
   });
 
   /*$(document).on('click', function(window) { //при нажатии вне окна закрывается оно
-    if (!modal.is(window.target)){
-      modal.toggleClass('modal--visible');
+      if (window.target == modal) {
+        modal.toggleClass('modal--visible');
     }
       
   });*/
