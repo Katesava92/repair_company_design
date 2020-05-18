@@ -25,13 +25,40 @@
     
 
 .section
-  padding: 60px 0
+  padding: 124px 0
   &-title
-    font-family: Yeseva One, cursive
+    font-family: 'Yeseva One', cursive
     text-align: center
     text-transform: uppercase
+    &--left
+      text-align: left
     &__heading
       margin-bottom: 0.857rem
+      line-height: 138.6%
+      &--primary
+        margin-top: 0
+        margin-bottom: 1.714rem
+        font-size: 1.929rem
+        line-height: 2.673rem
+        letter-spacing: -0.07em
+        color: $primary
+    &__word
+      display: flex
+      align-items: center
+      &::after
+        content: ''
+        width: 90px
+        height: 1px
+        background-color: $primary
+        margin-left: 33px
+    &__text
+      max-width: 31.57rem
+      margin-top: 0
+      margin-bottom: 3.429rem
+      font-family: 'Futura Book', sans-serif
+      font-size: 1.286rem
+      line-height: 2.071rem 
+      text-transform: none
     &__image
       display: flex
       justify-content: center
@@ -43,6 +70,10 @@
         margin: 0 10px
         background-color: $primary
         border-radius: 30px
+  &--dark
+    background-color: $dark
+    background-image: url('../img/main-bg-lines.svg') 
+    color: $white
 
 .label
   font-size: 1.071rem
@@ -83,6 +114,7 @@
   position: fixed
   right: 0
   bottom: 0
+  z-index: 3
   display: none
   margin-right: 100px
   margin-bottom: 40px

@@ -50,7 +50,7 @@ $(document).ready(function () {
     }
   });
 
-  /*$(document).on('click', function(window) { //при нажатии вне окна закрывается оно
+  /*(document).on('click', function(window) { //при нажатии вне окна закрывается оно
       if (window.target == modal) {
         modal.toggleClass('modal--visible');
     }
@@ -72,6 +72,24 @@ $(document).ready(function () {
   });
 
 
+  var mySwiper = new Swiper ('.swiper-container', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+  
+  var next = $('.swiper-button-next');
+  var prev = $('.swiper-button-prev');
+  var bullets = $('.swiper-pagination');
+//делаем чтобы расстояние в пагинации слайдов рассчитывалось авто вне зависимости от кол-ва слайдов
+  next.css('left', prev.width() + 30 + bullets.width() + 40)
+  bullets.css('left', prev.width() + 30)
 });
 
 
