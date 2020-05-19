@@ -48,6 +48,39 @@
     &__second
       width: 100%
 
+@media screen and ( max-width: 690px )
+  .control
+    //background-color: $dark
+    //color: $white
+    &__video
+      margin-bottom: 28px
+    &__text
+      max-width: 340px
+      margin-bottom: 26px
+      font-size: 14px
+      line-height: 169.8%
+      //color: $white
+      &::before
+        margin-bottom: 21px
+    &__form
+      flex-direction: column
+      align-items: start
+    &__label
+    &__name, &__phone
+      margin-right: 0
+      color: $white
+    &__name
+      margin-bottom: 63px
+    &__phone
+      margin-bottom: 14px
+    &__policy
+      margin-top: 0
+      margin-right: 0
+      margin-bottom: 62px
+    &__button
+      min-width: 340px
+      order: 1
+
 
 @media screen and ( max-width: 576px )
   .container
@@ -88,6 +121,9 @@
       font-size: 13px
       line-height: 15px
       font-weight: 500
+  .projects
+    &__col-50
+      padding-left: 4px
   .section
     &-title
       &__heading
@@ -99,9 +135,12 @@
           font-size: 22px
           line-height: 138.6%
           margin-bottom: 22px
+      &__word
+        &::after
+          display: none
       &__text
         max-width: 305px
-        margin-bottom: 33px
+        margin-bottom: 32px
         font-size: 14px
         ine-height: 158.48%
     &--dark
@@ -113,13 +152,17 @@
       &__text
         flex-basis: 47%
         padding-bottom: 3px
+        margin-bottom: 28px
       &__heading
         margin-top: 0
+        margin-bottom: 10px
         font-size: 14px
         line-height: 138.6%
       &__value
         font-size: 14px
         line-height: 135.84%
+      &__image
+        height: 200px
   .types
     &__section-title
       margin-bottom: 40px

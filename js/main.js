@@ -90,6 +90,22 @@ $(document).ready(function () {
 //делаем чтобы расстояние в пагинации слайдов рассчитывалось авто вне зависимости от кол-ва слайдов
   next.css('left', prev.width() + 30 + bullets.width() + 40)
   bullets.css('left', prev.width() + 30)
+
+  /*var mySwiper2 = new Swiper ('.swiper-container-s2', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      el: '.swiper-pagination-fraction',
+      type: 'fraction',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });*/
+
+
 });
 
 

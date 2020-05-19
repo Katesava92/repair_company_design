@@ -1,0 +1,32 @@
+<!-- Slider main container -->
+            <!--<div class="swiper-container-s2">
+              <!-- If we need pagination -->
+              <div class="swiper-pagination-fraction"></div>
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <div class="swiper-slide__text">
+                      <h3 class="swiper-slide__heading swiper-slide__heading--small">Выезд на замеры помещения</h3>  <!-- /.swiper-slide__heading -->
+                      <p class="swiper-slide__description">
+                        После вашего звонка мы идем к вам, чтобы проконсультироваться и измерить помещения вашей квартиры. Во время нашей встречи вы можете задать абсолютно любые вопросы, касаемо ремонта. 
+                        Оценщик приходит, чтобы измерить комнату. Он проконсультирует вас по вопросам техники ремонта, дизайна квартиры, сроков ремонта квартиры в целом и отдельных ее этапов.
+
+                      </p>  <!-- /.swiper-slide__description -->
+                    </div>  <!-- /.swiper-slide__text -->
+                  </div>
+                  <div class="swiper-slide">Slide 2</div>
+                  <div class="swiper-slide">Slide 3</div>
+                  <div class="swiper-slide">Slide 3</div>
+                  <div class="swiper-slide">Slide 3</div>
+                  <div class="swiper-slide">Slide 3</div>
+                  ...
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+
+            </div>-->

@@ -50,4 +50,47 @@
     margin-bottom: 2.785rem
   &__button
     align-self: flex-end
+
+  &-thanks
+    position: fixed
+    z-index: 199
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: rgba($dark, 0.6)
+    opacity: 0
+    visibility: hidden
+    &__dialog
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      position: relative
+      max-width: 36.142rem
+      padding: 2.357rem 3.5rem 
+      color: $white
+      background: $dark url('../img/bg-lines.svg') no-repeat center
+    &__image
+      width: 100px
+      height: 100px
+      margin-bottom: 2.5rem
+      border: 4px solid $primary
+      border-radius: 50%
+      background: url('../img/checked.svg') no-repeat center / 50px
+    &__title
+      margin-top: 0
+      margin-bottom: 1.071rem
+      font-size: 1.786rem
+      line-height: 2.071rem
+    &__text
+      margin-top: 0
+      font-size: 1.286rem
+      line-height: 1.429rem
+      text-align: center
     
