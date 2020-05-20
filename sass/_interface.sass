@@ -25,13 +25,14 @@
     
 
 .section
-  padding: 124px 0
   &-title
     font-family: 'Yeseva One', cursive
     text-align: center
     text-transform: uppercase
     &--left
       text-align: left
+    &--light
+      color: $white
     &__heading
       margin-bottom: 0.857rem
       line-height: 138.6%
@@ -90,8 +91,12 @@
   background-color: transparent
   border: none
   border-bottom: 1px solid rgba($white, 0.15)
-  &::placeholder
-    color: $white
+  &--light
+    &::placeholder
+      color: $white
+  &--dark
+    &::placeholder
+      color: $secondary-300
 
 .policy
   &__checkbox

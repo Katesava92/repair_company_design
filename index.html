@@ -6,10 +6,12 @@
   <title>Repair Design Project</title>
   <link href="https://fonts.googleapis.com/css?family=Yeseva+One&display=swap&subset=cyrillic-ext" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <header class="header">
+  <header class="header wow animate__backInDown">
     <div class="container">
       <div class="menu">
         <a href="index.html" class="logo menu__logo">Repair Design Project</a>      <!-- /.logo header__logo -->
@@ -30,26 +32,26 @@
   </header>  <!-- /.header -->
   <main>
     <section class="hero">
-      <div class="instagram hero__instagram">
+      <div class="instagram hero__instagram wow animate__zoomIn">
         <a href="#" class="instagram__link">INSTAGRAM</a>
       </div>      <!-- /.instagram hero__insragram -->
       <div class="container">
         <div class="hero__content">
-          <h1 class="title hero__title">Турецкий ремонт в&nbsp;<span class="title--primary">Ростове-на-дону</span></h1>
-          <p class="hero__text">Получите готовый ремонт под ключ в срок с экономией рабочего времени до 45 дней и 20% от стоимости материалов за счет организации работы</p>
-          <div class="buttons hero__butttons">
+          <h1 class="title hero__title wow animate__zoomIn" data-wow-delay="0.2s">Турецкий ремонт в&nbsp;<span class="title--primary">Ростове-на-дону</span></h1>
+          <p class="hero__text wow animate__zoomIn" data-wow-delay="0.6s">Получите готовый ремонт под ключ в срок с экономией рабочего времени до 45 дней и 20% от стоимости материалов за счет организации работы</p>
+          <div class="buttons hero__butttons wow animate__zoomIn" data-wow-delay="0.8s">
             <button class="button hero__button button--primary" data-toggle="modal">Рассчитать стоимость</button>
             <button class="button hero__button button--outline" data-toggle="modal">Отправить заявку</button>
           </div>       <!-- /.buttons -->
         </div>        <!-- /.container -->
       </div>      <!-- /.hero__content -->
-      <a href="#" class="hero__scroll-down">листайте вниз</a>
+      <a href="#" class="hero__scroll-down wow animate__pulse" data-wow-iteration="3" data-wow-delay="4s">листайте вниз</a>
     </section>    <!-- /.hero -->
 
     <section class="section section--dark projects">
       <div class="container">
         <div class="row">
-          <div class="col-50 projects__col-50">
+          <div class="col-50 projects__col-50 wow animate__fadeInLeft">
             <div class="section-title section-title--left">
               <h2 class="section-title__heading section-title__heading--primary">завершенные <span class="section-title__word">проекты</span></h2>
               <p class="section-title__text">На сайте представлена ​​лишь небольшая часть работ, выполняемых нашей компанией. За 14 лет работы на строительном рынке мы осчастливили более 1000 семей</p>
@@ -136,7 +138,7 @@
 
           </div>    <!-- /.col-50 -->
 
-          <div class="col-50 col-50__second">
+          <div class="col-50 col-50__second wow animate__fadeInRight">
             <!-- Slider main container -->
             <div class="swiper-container">
               <!-- Additional required wrapper -->
@@ -164,42 +166,39 @@
 
     <section class="section control">
       <div class="container">
-        <div class="section-title control__section-title">
+        <div class="section-title control__section-title section-title--light">
           <h2 class="section-title__heading">онлайн контроль</h2>
           <div class="section-title__image">
             <img src="./img/video.svg" alt="video-camera">
           </div><!-- /.section-title__image -->
         </div>   <!-- /.sectio-title -->
 
-        <div class="column">
-          <div class="control__video">
-            <img src="./img/video.jpg" alt="video">
-          </div> <!-- /.control__video -->
+        <div class="control__video video wow animate__zoomIn">
+          <img class="video__play" src="./img/play.svg" alt="play">
+        </div> <!-- /.control__video -->
 
-          <p class="control__text">
-            На каждом объекте установлена ​​камера, которая транслирует ход работы на часах. В любой момент вы можете зайти на наш сайт и следить за ходом работы в вашей квартире. Посмотрите прямую трансляцию с одного из наших объектов! Оставьте заявку ниже чтобы получить ссылку на трансляцию.
-          </p> <!-- /.control__text -->
+        <p class="control__text wow animate__zoomIn">
+          На каждом объекте установлена ​​камера, которая транслирует ход работы на часах. В любой момент вы можете зайти на наш сайт и следить за ходом работы в вашей квартире. Посмотрите прямую трансляцию с одного из наших объектов! Оставьте заявку ниже чтобы получить ссылку на трансляцию.
+        </p> <!-- /.control__text -->
 
-          <form action="#" class="form control__form">
-            <div class="control__name">
-              <label for="name" class="label form__label label--dark">Имя</label>
-              <input type="text" class="input form__input control__input" placeholder="Как вас зовут:" id="name">
-            </div>  <!-- /.name -->
+        <form action="#" class="form control__form wow animate__zoomIn">
+          <div class="control__input-group">
+            <label for="name" class="label form__label label--dark">Имя</label>
+            <input type="text" class="input form__input control__input input--dark" placeholder="Как вас зовут:" id="name">
+          </div>  <!-- /.name -->
 
-            <div class="control__phone">
-              <label for="phone" class="label form__label label--dark">Телефон</label>
-              <input type="tel" class="input form__input control__input"  placeholder="Ваш номер телефона:" id="phone">
-            </div>   <!-- /.phone -->
+          <div class="control__input-group control__input-group--last">
+            <label for="phone" class="label form__label label--dark">Телефон</label>
+            <input type="tel" class="input form__input control__input input--dark"  placeholder="Ваш номер телефона:" id="phone">
+          </div>   <!-- /.phone -->
 
-            <button class="button control__button button--primary">Отправить</button><br>
-            <div class="policy control__policy">
-              <input type="checkbox" name="policy-checkbox" id="policy-checkbox" class="policy__checkbox" checked>
-              <label for="policy-checkbox" class="policy__label policy__label--dark">Я соглашаюсь с обработкой данных</label>
-            </div>  <!-- /.policy -->
-          </form>
-          
-
-        </div>        <!-- /.column -->
+          <button class="button control__button button--primary">Отправить</button>
+          <div class="policy control__policy">
+            <input type="checkbox" name="policy-checkbox" id="policy-checkbox" class="policy__checkbox" checked>
+            <label for="policy-checkbox" class="policy__label control__policy-label policy__label--dark">Я соглашаюсь с обработкой данных</label>
+          </div>  <!-- /.policy -->
+        </form>
+        
 
       </div>      <!-- /.container -->
     </section>    <!-- /.section control -->
@@ -214,7 +213,7 @@
         </div>   <!-- /.sectio-title -->
         <div class="row">
           <div class="col-32">
-            <div class="card types__card">
+            <div class="card types__card wow animate__fadeInLeft" data-wow-delay="0.2s">
               <img src="./img/types/type-1.jpg" alt="Косметический ремонт" class="card__image">
               <div class="card__text">
                 <h3 class="card__title">Косметический ремонт</h3>              <!-- /.card__title -->
@@ -239,7 +238,7 @@
             </div>            <!-- /.card -->
           </div>          <!-- /.col -->
           <div class="col-32">
-            <div class="card types__card">
+            <div class="card types__card wow animate__fadeInLeft" data-wow-delay="0.4s">
               <img src="./img/types/type-2.jpg" alt="Капитальный ремонт" class="card__image">
               <div class="card__text">
                 <h3 class="card__title">Капитальный ремонт</h3>              <!-- /.card__title -->
@@ -264,7 +263,7 @@
             </div>            <!-- /.card -->
           </div>          <!-- /.col -->
           <div class="col-32">
-            <div class="card types__card">
+            <div class="card types__card wow animate__fadeInLeft" data-wow-delay="0.6s">
               <img src="./img/types/type-3.jpg" alt="Дизайнерский ремонт" class="card__image">
               <div class="card__text">
                 <h3 class="card__title">Дизайнерский ремонт</h3>              <!-- /.card__title -->
@@ -306,7 +305,7 @@
         </div>   <!-- /.section-title -->
         <div class="row">
           <div class="col-32">
-            <div class="card design__card">
+            <div class="card design__card wow animate__fadeInLeft" data-wow-delay="0.2s">
               <img src="./img/design/design-1.jpg" alt="Минимальный" class="card__image">
               <div class="card__text">
                 <h3 class="card__title">Минимальный</h3>              <!-- /.card__title -->
@@ -325,7 +324,7 @@
             </div>
           </div>
           <div class="col-32">
-            <div class="card design__card">
+            <div class="card design__card wow animate__fadeInLeft" data-wow-delay="0.4s">
               <img src="./img/design/design-2.jpg" alt="Стандартный" class="card__image">
               <div class="card__text">
                 <h3 class="card__title">Стандартный</h3>              <!-- /.card__title -->
@@ -350,7 +349,7 @@
             </div>
           </div>
           <div class="col-32">
-            <div class="card design__card">
+            <div class="card design__card wow animate__fadeInLeft" data-wow-delay="0.6s">
               <img src="./img/design/design-3.jpg" alt="Полный" class="card__image">
               <div class="card__text">
                 <h3 class="card__title">Полный</h3>              <!-- /.card__title -->
@@ -422,11 +421,11 @@
       <h3 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами </h3>
       <form action="#" class="form modal__form">
         <label for="user-name" class="label form__label label--light">Имя</label>
-        <input type="text" class="input form__input modal__input" id="user-name" placeholder="Как вас зовут:">
+        <input type="text" class="input form__input modal__input input--light" id="user-name" placeholder="Как вас зовут:">
         <label for="user-phone" class="label form__label label--light">Телефон</label>
-        <input type="tel" class="input form__input modal__input" id="user-phone" placeholder="Ваш номер телефона:">
+        <input type="tel" class="input form__input modal__input input--light" id="user-phone" placeholder="Ваш номер телефона:">
         <label for="user-email" class="label form__label label--light">Email</label>
-        <input type="email" class="input form__input modal__input" id="user-email" placeholder="Ваш email">
+        <input type="email" class="input form__input modal__input input--light" id="user-email" placeholder="Ваш email">
         <div class="policy modal__policy">
           <input type="checkbox" name="policy-checkbox" id="policy-checkbox" class="policy__checkbox" checked>
           <label for="policy-checkbox" class="policy__label">Я соглашаюсь с обработкой данных</label>
@@ -452,6 +451,7 @@
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <script src="./js/wow.min.js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>

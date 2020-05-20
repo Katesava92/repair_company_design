@@ -50,35 +50,25 @@
 
 @media screen and ( max-width: 690px )
   .control
-    //background-color: $dark
-    //color: $white
     &__video
       margin-bottom: 28px
     &__text
-      max-width: 340px
-      margin-bottom: 26px
       font-size: 14px
       line-height: 169.8%
-      //color: $white
       &::before
         margin-bottom: 21px
     &__form
       flex-direction: column
-      align-items: start
-    &__label
-    &__name, &__phone
-      margin-right: 0
-      color: $white
-    &__name
+    &__input-group
+      flex-basis: 100%
+      width: 65%
       margin-bottom: 63px
-    &__phone
-      margin-bottom: 14px
     &__policy
       margin-top: 0
-      margin-right: 0
+      margin-left: 0
       margin-bottom: 62px
     &__button
-      min-width: 340px
+      align-self: center
       order: 1
 
 
@@ -122,6 +112,7 @@
       line-height: 15px
       font-weight: 500
   .projects
+    padding-bottom: 0
     &__col-50
       padding-left: 4px
   .section
@@ -163,9 +154,55 @@
         line-height: 135.84%
       &__image
         height: 200px
-  .types
+  .control
+    padding-top: 25px
+    padding-bottom: 0
+    background-color: #000
     &__section-title
-      margin-bottom: 40px
+      margin-top: 0
+      margin-bottom: 42px
+    &__video
+      max-width: 340px
+      min-height: 207px
+      background: $dark url('../img/video-sm.jpg') center no-repeat
+    &__text
+      max-width: 340px
+      margin-bottom: 30px
+      &::before
+        margin-bottom: 18px
+    &__form
+      position: relative
+      margin-left: 2px
+      align-items: start
+    &__input
+      padding-bottom: 4px
+      font-size: 18px
+      line-height: 138.72%
+      color: $white
+    &__input-group
+      width: 100%
+      margin-bottom: 62px
+      &--last
+        margin-bottom: 12px
+    &__policy
+      margin-bottom: 88px
+    &__button
+      position: absolute
+      bottom: -26px
+      max-width: 340px
+      width: 100%
+      padding: 18px 130px
+      font-weight: 500
+      font-size: 16px
+      line-height: 16px
+  .video
+    &__play
+      width: 19%
+  .types
+    padding-top: 77px
+    &__section-title
+      margin-top: 0
+      margin-bottom: 35px
     &__card
       margin-bottom: 72px
   .card
