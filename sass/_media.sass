@@ -17,36 +17,49 @@
     display: none
 
 @media screen and ( max-width: 950px )
-  .types
-  &__section-title
-    margin-bottom: 5rem
-    font-size: 22px
-    line-height: 138.6%
   .row
     flex-direction: column
     align-items: center
-  .types
-    &__card
-      margin-bottom: 4.286rem
-  .card
-    &__text
-      margin-left: 0
-    &__list
-      line-height: 22px
-      margin-bottom: 30px
-    &__pricetag
-      padding: 10px 30px
-  .design
-    &__section-title
-      font-size: 15px
-    &__card
-      margin-bottom: 4.286rem
-  .projects
-    &__col-50
-      margin-bottom: 32px
   .col-50
     &__second
       width: 100%
+  .projects
+    &__col-50
+      margin-bottom: 32px
+  .types
+    &__section
+      &-title
+        margin-bottom: 5rem
+        font-size: 22px
+        line-height: 138.6%
+    &__card
+      margin-bottom: 4.286rem
+      &-text
+        margin-left: 0
+      &-list
+        line-height: 22px
+        margin-bottom: 30px
+      &-pricetag
+        padding: 10px 30px
+  .design
+    &__section
+      &-title
+        font-size: 15px
+    &__card
+      margin-bottom: 4.286rem
+      &-text
+        margin-left: 0
+      &-list
+        line-height: 22px
+        margin-bottom: 30px
+      &-pricetag
+        padding: 10px 30px
+  .team
+    &__card
+      &::before
+        top: -35px
+        left: -35px
+  
 
 @media screen and ( max-width: 690px )
   .control
@@ -70,6 +83,28 @@
     &__button
       align-self: center
       order: 1
+  .footer
+    &__title
+      font-size: 20px
+      line-height: 28px
+      margin-bottom: 52px
+    &__wrap
+      margin-top: 0
+      background: $dark
+    &__form
+      flex-direction: column
+    &__input
+      font-size: 18px
+      line-height: 19px
+      &-group
+        margin-bottom: 66px
+        &--full
+          &-width
+            margin-bottom: 5px
+    &__policy
+      margin-bottom: 67px
+    
+    
 
 
 @media screen and ( max-width: 576px )
@@ -158,9 +193,10 @@
     padding-top: 25px
     padding-bottom: 0
     background-color: #000
-    &__section-title
-      margin-top: 0
-      margin-bottom: 42px
+    &__section
+      &-title
+        margin-top: 0
+        margin-bottom: 42px
     &__video
       max-width: 340px
       min-height: 207px
@@ -179,11 +215,14 @@
       font-size: 18px
       line-height: 138.72%
       color: $white
-    &__input-group
-      width: 100%
-      margin-bottom: 62px
-      &--last
-        margin-bottom: 12px
+    &__input
+      &-group
+        width: 100%
+        margin-bottom: 62px
+        &:last-of-type
+          margin-bottom: 12px
+      //&--last
+       // margin-bottom: 12px
     &__policy
       margin-bottom: 88px
     &__button
@@ -200,47 +239,119 @@
       width: 19%
   .types
     padding-top: 77px
-    &__section-title
-      margin-top: 0
-      margin-bottom: 35px
+    &__section
+      &-title
+        margin-top: 0
+        margin-bottom: 35px
     &__card
       margin-bottom: 72px
-  .card
-    &__text
-      max-width: 270px
-      width: 100%
-      margin-top: -142px
-      padding: 21px 41px 20px 31px
-    &__title
-      font-size: 15px
-      line-height: 138.6%
-      margin-bottom: 6px
-    &__list
-      font-size: 13px
-      line-height: 170.8%
-      margin-bottom: 27px
-    &__pricetag
-      min-width: 190px
-      padding: 10px 19px
-      font-size: 16px
-      line-height: 138.6%
-      font-weight: 500
-      &--align
+      &-text
+        max-width: 270px
+        width: 100%
+        margin-top: -142px
+        padding: 21px 41px 20px 31px
+      &-title
+        font-size: 15px
+        line-height: 138.6%
+        margin-bottom: 6px
+      &-list
+        font-size: 13px
+        line-height: 170.8%
+        margin-bottom: 27px
+      &-pricetag
+        min-width: 190px
+        padding: 10px 19px
+        font-size: 16px
+        line-height: 138.6%
+        font-weight: 500
         padding-left: 44px
   .design
     background: $dark
     color: $white
-    &__section-title
-      margin-bottom: 0
-    &__section-text
-      max-width: 306px
-      margin-top: 18px
-      font-size: 15px
-      line-height: 135.84%
+    &__section
+      &-title
+        margin-bottom: 0
+    &__section
+      &-text
+        max-width: 306px
+        margin-top: 18px
+        font-size: 15px
+        line-height: 135.84%
     &__card
       margin-bottom: 76px
+      &-text
+        max-width: 270px
+        width: 100%
+        margin-top: -142px
+        padding: 21px 41px 20px 31px
+      &-title
+        font-size: 15px
+        line-height: 138.6%
+        margin-bottom: 6px
+      &-list
+        font-size: 13px
+        line-height: 170.8%
+        margin-bottom: 27px
+      &-pricetag
+        min-width: 190px
+        padding: 10px 19px
+        font-size: 16px
+        line-height: 138.6%
+        font-weight: 500
+        padding-left: 44px
+  .team
+    background-color: $dark
+    &__section
+      &-title
+        margin-bottom: 82px
+        font-size: 22px
+        line-height: 138.6%
+        color: $white
+      &-text
+        padding-top: 20px
+        max-width: 340px
+        font-size: 15px
+        line-height: 135.84%
+        color: $white
+    &__card
+      margin-bottom: 129px
+      margin-left: 35px
+      &-image
+        //width: 304px
+        //height: 358px
+      &-text
+        margin-top: -81px
+        min-width: 233px
+      &-title
+        font-size: 18px
+        line-height: 25px
+      &-subtitle
+        margin-bottom: 25px
+      &-pricetag
+        min-width: 233px
+        bottom: -39px
+        padding: 13px 23px
+    &__text
+      display: none
+
+
   .col-50
     width: 100%
+  .footer
+    &__form
+      margin-left: 5px
+    &__button
+      max-width: 340px
+      width: 100%
+      padding: 19px 140px
+    &__policy
+      margin-left: 0
+    &__menu
+      display: none
+  .policy
+    &__label
+      &--center
+        justify-content: start
 
 
 

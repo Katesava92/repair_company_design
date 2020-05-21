@@ -108,6 +108,123 @@ $(document).ready(function () {
   );
   wow.init();
 
+  //Валидация формы
+  $('.modal__form').validate({
+    errorElement: "div",
+    errorClass: "invalid",
+    rules: {
+      // simple rule, converted to {required:true}, строчное правило
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlenght: 15
+      },
+      userPhone: "required",
+      // compound rule, правило-объект (блок)
+      userEmail: {
+        required: true,
+        email: true
+      }
+    }, //сообщения
+    messages: {
+      userName: {
+        required: "Имя обязательно",
+        minlength: jQuery.validator.format("Имя не короче {0} букв!")
+      },
+      userPhone: "Телефон обязателен",
+      userEmail: {
+        required: "Обязательно укажите email",
+        email: "Укажите корректный email"
+      }
+    }
+  
+  });
+
+  $('.control__form').validate({
+    errorElement: "div",
+    errorClass: "invalid",
+    rules: {
+      // simple rule, converted to {required:true}, строчное правило
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlenght: 15
+      },
+      userPhone: "required"
+    }, //сообщения
+    messages: {
+      userName: {
+        required: "Имя обязательно",
+        minlength: jQuery.validator.format("Имя не короче {0} букв!")
+      },
+      userPhone: "Телефон обязателен"
+    }
+  
+  });
+
+  $('.footer__form').validate({
+    errorElement: "div",
+    errorClass: "invalid",
+    rules: {
+      // simple rule, converted to {required:true}, строчное правило
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlenght: 15
+      },
+      userPhone: "required",
+      // compound rule, правило-объект (блок)
+      userQuestion: "required"
+    }, //сообщения
+    messages: {
+      userName: {
+        required: "Имя обязательно",
+        minlength: jQuery.validator.format("Имя не короче {0} букв!")
+      },
+      userPhone: "Телефон обязателен",
+      userQuestion: "Заполните поле"
+    }
+  
+  });
+
+
+  //phone mask
+  $('[type=tel]').mask('+7(000) 00-00-000', {placeholder: "+7(000) 00-00-000"});
+
+
+  ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
+            center: [54.711553, 20.508505],
+            zoom: 15
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+
+        // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            hintContent: 'Наша организация',
+            balloonContent: 'Ленинский проспект, 30, Калининград, Россия, 236006'
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: './img/location.png',
+            // Размеры метки.
+            iconImageSize: [32, 32],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-5, -38]
+        });
+
+    myMap.geoObjects
+        .add(myPlacemark);
+});
+
 });
 
 

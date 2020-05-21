@@ -1,0 +1,70 @@
+.team
+  &__section
+    &-title
+      margin-bottom: 5.857rem
+    &-text
+      max-width: 32rem
+      margin: auto
+      padding-top: 1.143rem
+  &__card
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-bottom: 6.929rem
+    &::before
+      content: ''
+      position: absolute
+      top: -35px
+      left: 35px
+      width: 70px
+      height: 70px
+      background: $primary url(../img/team/idea.svg) no-repeat center
+    &--one
+      &::before
+        background: $primary url(../img/team/pen.svg) no-repeat center
+    &--second
+      &::before
+        background: $primary url(../img/team/portfolio.svg) no-repeat center
+    &-text
+      position: relative
+      max-width: 16.929rem
+      margin: 0 auto
+      margin-top: -5.843rem
+      padding: 20px 25px 0 
+    &-title
+      margin: 0
+      text-align: center
+      color: $secondary-100
+    &-subtitle
+      margin: auto
+      margin-bottom: 1.357rem
+    &-pricetag
+      position: absolute
+      left: 0
+      bottom: -46px
+      max-width: 16.643rem
+      width: 100%
+      padding: 0.929rem 1.643rem
+      font-size: 0.929rem
+      line-height: 1.429rem
+      text-align: center
+  &__text
+    margin: auto
+    max-width: 40.571rem
+    margin-top: 0
+    margin-bottom: 4.071rem
+    font-family: 'Futura Book', sans-serif
+    font-size: 1.429rem
+    line-height: 2.429rem
+    text-align: center
+    color: $secondary-300
+    &::before
+      content: ''
+      display: block
+      margin: auto
+      margin-bottom: 9px
+      width: 55px
+      height: 2px
+      border-radius: 30px
+      background: $primary

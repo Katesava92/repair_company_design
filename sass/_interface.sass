@@ -38,7 +38,7 @@
       line-height: 138.6%
       &--primary
         margin-top: 0
-        margin-bottom: 1.714rem
+        margin-bottom: 1.429rem
         font-size: 1.929rem
         line-height: 2.673rem
         letter-spacing: -0.07em
@@ -52,14 +52,6 @@
         height: 1px
         background-color: $primary
         margin-left: 33px
-    &__text
-      max-width: 31.57rem
-      margin-top: 0
-      margin-bottom: 3.429rem
-      font-family: 'Futura Book', sans-serif
-      font-size: 1.286rem
-      line-height: 2.071rem 
-      text-transform: none
     &__image
       display: flex
       justify-content: center
@@ -75,6 +67,48 @@
     background-color: $dark
     background-image: url('../img/main-bg-lines.svg') 
     color: $white
+  &-text
+    font-family: 'Futura Book', sans-serif
+    font-size: 20px
+    line-height: 27px 
+    text-align: center
+    text-transform: none
+    &--left
+      justify-content: start
+      text-align: left
+
+.card
+  &-image
+    text-align: center
+  &-text
+    background-color: $white
+    box-shadow: 10px 10px 20px rgba($dark, 0.03)
+  &-title
+    font-family: 'Yeseva One', cursive
+    font-size: 1.286rem
+    line-height: 1.986rem
+    color: $dark
+  &-subtitle
+    display: block
+    font-size: 18px
+    line-height: 26px
+    text-align: center
+    color: $secondary
+  &-list
+    font-family: 'Futura Book', sans-serif
+    font-size: 1.071rem
+    line-height: 1.786rem
+    color: $secondary
+  &-pricetag
+    font-family: 'Yeseva One', cursive
+    font-size: 1.286rem
+    line-height: 1.786rem
+    text-transform: uppercase
+    text-align: center
+    color: $white
+    background-color: $primary
+    box-shadow: 0px 5px 15px rgba($primary, 0.3)
+  &-description
 
 .label
   font-size: 1.071rem
@@ -113,6 +147,8 @@
     line-height: 1.571rem
     &--dark
       color: $secondary-100
+    &--center
+      justify-content: center
     &::before
       content: ''
       width: 18px
@@ -140,5 +176,11 @@
   &:hover
     cursor: pointer
 
+
+.invalid
+    color: $error
+input
+  &.invalid
+    border-bottom: 1px solid $error
 
 
