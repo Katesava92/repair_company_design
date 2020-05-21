@@ -1,0 +1,41 @@
+.clients
+  &__section
+    &-title
+      margin-bottom: 39px
+    &-text
+      max-width: 360px
+      margin: auto
+      margin-top: 19px
+  &__card
+    &-text
+      padding: 46px 0 63px 30px
+    &-title
+      position: relative
+      max-width: 197px
+      margin: auto
+      margin-bottom: 28px
+      padding-left: 11px
+      line-height: 23px
+      color: $secondary-100
+      &::before
+        content: ''
+        position: absolute
+        top: -14px
+        left: -84px
+        width: 76px
+        height: 76px
+        border-radius: 50%
+        background: url('../img/clients/client-1.jpg') no-repeat center
+      &--one
+        &::before
+          background: url('../img/clients/client-2.jpg') no-repeat center
+      &--two
+        &::before
+          background: url('../img/clients/client-3.jpg') no-repeat center
+    &-description
+      max-width: 324px
+      margin-top: 0
+      font-family: 'Futura Book', sans-serif
+      font-size: 15px
+      line-height: 180%
+      color: $secondary
