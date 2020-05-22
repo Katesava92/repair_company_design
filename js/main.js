@@ -223,9 +223,10 @@ $(document).ready(function () {
             // её "ножки" (точки привязки).
             iconImageOffset: [-5, -38]
         });
-
     myMap.geoObjects
         .add(myPlacemark);
+    myMap.behaviors
+        .disable(['scrollZoom','drag']);
 });
 
 });
