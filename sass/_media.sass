@@ -110,46 +110,6 @@
 @media screen and ( max-width: 576px )
   .container
     width: 90%
-  .logo
-    font-size: 13px
-    line-height: 14px
-  .contacts
-    &__phone
-      margin-right: 0
-      font-size: 12px
-      line-height: 14px
-      color: $white
-      text-decoration: none
-    &__button
-      display: none
-  .hero
-    &__title
-      max-width: 320px
-      margin-top: 0
-      margin-bottom: 16px
-      font-size: 23px
-      line-height: 132.83%
-    &__text
-      max-width: 321px
-      margin-bottom: 32px
-      margin-top: 0
-      font-size: 18px
-      line-height: 135.84%
-    &__scroll-down
-      display: none
-    &__button
-      display: block
-      max-width: 339px
-      width: 100%
-      padding: 19px 70px
-      margin-bottom: 26px
-      font-size: 13px
-      line-height: 15px
-      font-weight: 500
-  .projects
-    padding-bottom: 0
-    &__col-50
-      padding-left: 4px
   .section
     &-title
       &__heading
@@ -171,6 +131,52 @@
         ine-height: 158.48%
     &--dark
       background-image: none
+  .header
+    background: $mobile-bg
+  .logo
+    font-size: 13px
+    line-height: 14px
+  .contacts
+    &__phone
+      margin-right: 0
+      font-size: 12px
+      line-height: 14px
+      color: $white
+      text-decoration: none
+    &__button
+      display: none
+  .hero
+    &::after
+      display: none
+    &__title
+      max-width: 320px
+      margin-top: 0
+      margin-bottom: 16px
+      font-size: 23px
+      line-height: 132.83%
+    &__text
+      max-width: 321px
+      margin-bottom: 32px
+      margin-top: 0
+      font-size: 18px
+      line-height: 135.84%
+    &__scroll-down
+      display: none
+    &__button
+      display: block
+      max-width: 339px
+      width: 100%
+      padding: 19px 68px
+      margin-bottom: 26px
+      font-size: 13px
+      line-height: 15px
+      font-weight: 500
+  .projects
+    padding-top: 38px
+    padding-bottom: 0
+    background: $mobile-bg
+    &__col-50
+      padding-left: 4px
   .swiper
     &-wrapper
       margin-bottom: 23px
@@ -192,7 +198,7 @@
   .control
     padding-top: 25px
     padding-bottom: 0
-    background-color: #000
+    background: $mobile-bg
     &__section
       &-title
         margin-top: 0
@@ -266,7 +272,7 @@
         font-weight: 500
         padding-left: 44px
   .design
-    background: $dark
+    background: $mobile-bg
     color: $white
     &__section
       &-title
@@ -279,6 +285,8 @@
         line-height: 135.84%
     &__card
       margin-bottom: 76px
+      &:nth-of-type(1)
+        margin-bottom: 86px
       &-text
         max-width: 270px
         width: 100%
@@ -299,8 +307,10 @@
         line-height: 138.6%
         font-weight: 500
         padding-left: 44px
+  .steps
+    display: none
   .team
-    background-color: $dark
+    background: $mobile-bg
     &__section
       &-title
         margin-bottom: 82px
@@ -331,27 +341,89 @@
         min-width: 233px
         bottom: -39px
         padding: 13px 23px
+      &--second
+        margin-bottom: 47px
     &__text
       display: none
-
-
-  .col-50
-    width: 100%
+  .clients
+    display: none
   .footer
+    background: $mobile-bg
+    &::before
+      display: none
+    &__wrap
+      background: $mobile-bg
+      margin-bottom: 48px
     &__form
       margin-left: 5px
     &__button
       max-width: 340px
       width: 100%
-      padding: 19px 140px
+      padding: 19px 102px
+      font-weight: 500
+      font-size: 15px
+      line-height: 16px
     &__policy
       margin-left: 0
+    &__subtitle
+      max-width: 334px
+      font-size: 18px
+      line-height: 138.6%
+    &__socials
+      margin-bottom: 38px
+      &-image
+        width: 39px
+        height: 39px
+        margin-right: 7px
+        margin-left: 11px
     &__menu
       display: none
+    &__map
+      max-width: 100%
+      min-height: 255px
+      margin-bottom: 42px
+      order: -1
   .policy
     &__label
       &--center
         justify-content: start
+  .col-50
+    width: 100%
+  .button
+    &-up
+      width: 39px
+      height: 39px
+      margin-right: 50px
+      border: 3px solid $primary
+      box-shadow: 0px 5px 15px rgba($primary, 0.3)
+      background: transparent url('../img/arrow-down.svg') no-repeat center / 1.5rem
+  .modal
+    &__dialog  
+      background: $dark
+      padding: 36px 20px 20px
+    &__title
+      max-width: 270px
+      margin-bottom: 17px
+      font-size: 16px
+      line-height: 25.998px
+    &__input
+      &-group
+        margin-bottom: 22px
+    &__button
+      align-self: center
+      max-width: 320px
+      width: 100%
+      font-size: 14px
+    &-thanks
+      &__image
+        width: 65px
+        height: 65px
+        margin-bottom: 17px
+        background: url('../img/checked.svg') no-repeat center / 25px
+      &__title
+        max-width: 310px
+        text-align: center
+
 
 
 

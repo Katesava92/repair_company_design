@@ -1,21 +1,22 @@
 .clients
   &__section
     &-title
-      margin-bottom: 39px
+      margin-bottom: 2.786rem
     &-text
-      max-width: 360px
+      max-width: 25.714rem
       margin: auto
-      margin-top: 19px
+      margin-top: 1.357rem
   &__card
+    margin-bottom: 27.5rem
     &-text
-      padding: 46px 0 63px 30px
+      padding: 3.286rem 0 4.5rem 2.143rem
     &-title
       position: relative
-      max-width: 197px
+      max-width: 14.071rem
       margin: auto
-      margin-bottom: 28px
-      padding-left: 11px
-      line-height: 23px
+      margin-bottom: 2rem
+      padding-left: 0.786rem
+      line-height: 1.643rem
       color: $secondary-100
       &::before
         content: ''
@@ -33,9 +34,31 @@
         &::before
           background: url('../img/clients/client-3.jpg') no-repeat center
     &-description
-      max-width: 324px
-      margin-top: 0
+      max-width: 23.143rem
+      margin-top: 2.214rem
       font-family: 'Futura Book', sans-serif
-      font-size: 15px
+      font-size: 1.071rem
       line-height: 180%
       color: $secondary
+    &-pricetag
+      position: relative
+      margin-right: -2px
+      padding: 1.214rem 1.214rem 1.214rem 4.643rem
+      font-size: 1.214rem
+      line-height: 1.714rem
+      &::before
+        content: ''
+        position: absolute
+        top: 11px
+        left: 18px
+        width: 32px
+        height: 32px
+        background: url('../img/clients/size.svg') no-repeat center
+      &--another
+        padding: 1.214rem 1.714rem 1.214rem 4.643rem
+        text-transform: none
+        &::before
+          background: url('../img/clients/calendar.svg') no-repeat center
+.pricetags
+  margin-top: -1.429rem
+  margin-left: 0.714rem

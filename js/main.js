@@ -91,7 +91,10 @@ $(document).ready(function () {
   next.css('left', prev.width() + 30 + bullets.width() + 40)
   bullets.css('left', prev.width() + 30)
 
-  var wow = new WOW(
+
+
+  
+  /*var wow = new WOW(
     {
       boxClass:     'wow',      // animated element css class (default is wow)
       animateClass: 'animate__animated', // animation css class (default is animated)
@@ -106,7 +109,7 @@ $(document).ready(function () {
       resetAnimation: true,     // reset animation on end (default is true)
     }
   );
-  wow.init();
+  wow.init();*/
 
   //Валидация формы
   $('.modal__form').validate({
@@ -213,7 +216,7 @@ $(document).ready(function () {
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
-            iconImageHref: './img/location.png',
+            iconImageHref: '../img/location.png',
             // Размеры метки.
             iconImageSize: [32, 32],
             // Смещение левого верхнего угла иконки относительно
