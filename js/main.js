@@ -218,6 +218,19 @@ $(document).ready(function () {
       }
   
     error.insertAfter($(element));
+  },
+
+  submitHandler: function(form) {
+    $.ajax({
+      type: "POST",
+      url: "send.php",
+      data: $('form').serialize(),
+      success: function (response) {
+        $(form)[0].reset();
+        modal.removeClass('modal--visible');
+        thanks.addClass('modal-thanks--visible');
+      }
+    });
   }
 
   });
@@ -258,6 +271,21 @@ $(document).ready(function () {
       }
   
       error.insertAfter($(element));
+  },
+
+
+
+  submitHandler: function(form) {
+    $.ajax({
+      type: "POST",
+      url: "send.php",
+      data: $('form').serialize(),
+      success: function (response) {
+        $(form)[0].reset();
+        modal.removeClass('modal--visible');
+        thanks.addClass('modal-thanks--visible');
+      }
+    });
   }
   
   });
