@@ -64,6 +64,14 @@
     text-transform: uppercase
     text-align: center
     color: $primary
+  &__phone
+    font-family: 'Yeseva One', cursive
+    font-size: 1.429rem
+    line-height: 2rem
+    text-transform: uppercase
+    text-decoration: none
+    &:hover
+      box-shadow: 0px 5px 15px rgba($primary, 0.3)
   &__socials
     position: relative
     margin-bottom: 2.714rem 
@@ -71,9 +79,14 @@
     &-image
       margin-right: 0.571rem
       margin-left: 0.786rem
+      text-decoration: none
+    &-image > img
+      &:hover
+        transform: scale(1.3)
   &__map
-    max-width: 66.071rem
-    min-height: 33.214rem
+    max-width: 925px
+    width: 100%
+    height: 465px
     margin: auto
     margin-bottom: 4.714rem
   &__menu

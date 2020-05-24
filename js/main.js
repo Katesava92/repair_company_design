@@ -57,6 +57,16 @@ $(document).ready(function () {
       
   });
 
+  //окно благодарности
+  var thanks = $('.modal-thanks'),
+      closeThanks = $('.modal-thanks__close');
+    
+    closeThanks.on('click', function() {
+      thanks.removeClass('modal-thanks--visible');
+    });
+
+
+
   //кнопка наверх
   var up = $('.button-up');
   $(window).scroll( function() { //при прокрутке появление и скрытие кнопки
@@ -116,54 +126,102 @@ $(document).ready(function () {
     errorElement: "div",
     errorClass: "invalid",
     rules: {
-      // simple rule, converted to {required:true}, строчное правило
-      userName: {
+      userName: {  // compound rule, правило-объект (блок)
         required: true,
-        minlength: 2,
-        maxlenght: 15
+        rangelength: [2, 15]
       },
-      userPhone: "required",
-      // compound rule, правило-объект (блок)
+      userPhone: {
+        required: true,
+        minlength:17
+      },  // simple rule, converted to {required:true}, строчное правило
       userEmail: {
         required: true,
         email: true
-      }
+      },
+      policyCheckbox: "required"
     }, //сообщения
     messages: {
       userName: {
         required: "Имя обязательно",
-        minlength: jQuery.validator.format("Имя не короче {0} букв!")
+        rangelength: "Не короче 2 и не больше 15 символов"
       },
-      userPhone: "Телефон обязателен",
+      userPhone: {
+        required: "Телефон обязателен",
+        minlength: "Укажите верный номер"
+      },
       userEmail: {
         required: "Обязательно укажите email",
         email: "Укажите корректный email"
+      },
+      policyCheckbox: "Поле обязательно для заполнения"
+    },
+    errorPlacement: function (error, element) {
+      if (element.attr("type") == "checkbox") {
+          return element.next('label').append(error);
       }
-    }
   
+    error.insertAfter($(element));
+  },
+
+
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $('form').serialize(),
+        success: function (response) {
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+          thanks.addClass('modal-thanks--visible');
+        }
+      });
+    }
+
   });
 
   $('.control__form').validate({
     errorElement: "div",
     errorClass: "invalid",
     rules: {
-      // simple rule, converted to {required:true}, строчное правило
-      userName: {
+      userName: {  // compound rule, правило-объект (блок)
         required: true,
-        minlength: 2,
-        maxlenght: 15
+        rangelength: [2, 15]
       },
-      userPhone: "required"
+      userPhone: {
+        required: true,
+        minlength:17
+      },  // simple rule, converted to {required:true}, строчное правило
+      userEmail: {
+        required: true,
+        email: true
+      },
+      policyCheckbox: "required"
     }, //сообщения
     messages: {
       userName: {
         required: "Имя обязательно",
-        minlength: jQuery.validator.format("Имя не короче {0} букв!")
+        rangelength: "Не короче 2 и не больше 15 символов"
       },
-      userPhone: "Телефон обязателен"
-    }
+      userPhone: {
+        required: "Телефон обязателен",
+        minlength: "Укажите верный номер"
+      },
+      userEmail: {
+        required: "Обязательно укажите email",
+        email: "Укажите корректный email"
+      },
+      policyCheckbox: "Поле обязательно для заполнения"
+    },
+    errorPlacement: function (error, element) {
+      if (element.attr("type") == "checkbox") {
+          return element.next('label').append(error);
+      }
   
+    error.insertAfter($(element));
+  }
+
   });
+
 
   $('.footer__form').validate({
     errorElement: "div",
@@ -172,27 +230,43 @@ $(document).ready(function () {
       // simple rule, converted to {required:true}, строчное правило
       userName: {
         required: true,
-        minlength: 2,
-        maxlenght: 15
+        rangelength: [2, 15]
       },
-      userPhone: "required",
+      userPhone: {
+        required: true,
+        minlength:17
+      },
       // compound rule, правило-объект (блок)
-      userQuestion: "required"
+      userQuestion: "required",
+      policyCheckbox: "required"
     }, //сообщения
     messages: {
       userName: {
         required: "Имя обязательно",
-        minlength: jQuery.validator.format("Имя не короче {0} букв!")
+        rangelength: "Не короче 2 и не больше 15 символов"
       },
-      userPhone: "Телефон обязателен",
-      userQuestion: "Заполните поле"
-    }
+      userPhone: {
+        required: "Телефон обязателен",
+        minlength: "Укажите верный номер"
+      },
+      userQuestion: "Заполните поле",
+      policyCheckbox: "Поле обязательно для заполнения"
+    },
+    errorPlacement: function (error, element) {
+      if (element.attr("type") == "checkbox") {
+          return element.next('label').append(error);
+      }
+  
+      error.insertAfter($(element));
+  }
   
   });
 
+ 
+
 
   //phone mask
-  $('[type=tel]').mask('+7(000) 00-00-000', {placeholder: "+7(000) 00-00-000"});
+  $('[type=tel]').mask('+7(000) 00-00-000', {placeholder: "+7(___) __-__-___"});
 
 
   ymaps.ready(function () {
@@ -216,7 +290,7 @@ $(document).ready(function () {
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
-            iconImageHref: '../img/location.png',
+            iconImageHref: 'img/location.png',
             // Размеры метки.
             iconImageSize: [32, 32],
             // Смещение левого верхнего угла иконки относительно
@@ -227,7 +301,18 @@ $(document).ready(function () {
         .add(myPlacemark);
     myMap.behaviors
         .disable(['scrollZoom','drag']);
+    myMap.container.fitToViewport();
 });
+
+
+
+
+
+
+
+
+
+
 
 });
 
