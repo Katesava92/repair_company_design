@@ -148,7 +148,7 @@ $(document).ready(function () {
         required: true,
         email: true
       },
-      policyCheckbox: "required"
+      policyCheckboxModal: "required"
     }, //сообщения
     messages: {
       userName: {
@@ -163,7 +163,7 @@ $(document).ready(function () {
         required: "Обязательно укажите email",
         email: "Укажите корректный email"
       },
-      policyCheckbox: "Поле обязательно для заполнения"
+      policyCheckboxModal: "Поле обязательно для заполнения"
     },
     errorPlacement: function (error, element) {
       if (element.attr("type") == "checkbox") {
@@ -206,7 +206,7 @@ $(document).ready(function () {
         required: true,
         email: true
       },
-      policyCheckbox: "required"
+      policyCheckboxControl: "required"
     }, //сообщения
     messages: {
       userName: {
@@ -221,7 +221,7 @@ $(document).ready(function () {
         required: "Обязательно укажите email",
         email: "Укажите корректный email"
       },
-      policyCheckbox: "Поле обязательно для заполнения"
+      policyCheckboxControl: "Поле обязательно для заполнения"
     },
     errorPlacement: function (error, element) {
       if (element.attr("type") == "checkbox") {

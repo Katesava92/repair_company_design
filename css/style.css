@@ -497,29 +497,30 @@ template {
   .input--dark::placeholder {
     color: #363636; }
 
-.policy__checkbox {
-  opacity: 0;
-  visibility: hidden; }
-  .policy__checkbox:checked + .policy__label::before {
-    background: #E3B873 url("../img/checked.svg") no-repeat center/0.8rem; }
-
-.policy__label {
-  display: flex;
-  align-items: center;
-  font-size: 1.143rem;
-  line-height: 1.571rem; }
-  .policy__label--dark {
-    color: #181818; }
-  .policy__label--center {
-    justify-content: center; }
-  .policy__label::before {
-    content: '';
-    width: 18px;
-    height: 18px;
-    border: 1px solid #E3B873;
-    border-radius: 1px;
-    cursor: pointer;
-    margin-right: 0.571rem; }
+.policy {
+  position: relative; }
+  .policy__checkbox {
+    opacity: 0;
+    visibility: hidden; }
+    .policy__checkbox:checked + .policy__label::before {
+      background: #E3B873 url("../img/checked.svg") no-repeat center/0.8rem; }
+  .policy__label {
+    display: flex;
+    align-items: center;
+    font-size: 1.143rem;
+    line-height: 1.571rem; }
+    .policy__label--dark {
+      color: #181818; }
+    .policy__label--center {
+      justify-content: center; }
+    .policy__label::before {
+      content: '';
+      width: 18px;
+      height: 18px;
+      border: 1px solid #E3B873;
+      border-radius: 1px;
+      cursor: pointer;
+      margin-right: 0.571rem; }
 
 .invalid {
   color: #e32727; }
@@ -528,8 +529,19 @@ input.invalid {
   border-bottom: 1px solid #e32727; }
 
 #policyCheckbox-error {
-  margin-left: -223px;
-  margin-bottom: -45px; }
+  position: absolute;
+  left: 130px;
+  bottom: -22px; }
+
+#policyCheckboxModal-error {
+  position: absolute;
+  left: 0;
+  bottom: -22px; }
+
+#policyCheckboxControl-error {
+  position: absolute;
+  left: 260px;
+  bottom: -22px; }
 
 .container {
   width: 85%;
@@ -560,8 +572,9 @@ input.invalid {
 
 html {
   font-size: 14px; }
-  html:-moz-placeholder {
-    opacity: 1; }
+
+input:-moz-placeholder {
+  opacity: 1; }
 
 body {
   font-family: 'Futura Book', sans-serif;
@@ -1556,7 +1569,7 @@ img {
     max-width: 305px;
     margin-bottom: 32px;
     font-size: 14px;
-    ine-height: 158.48%; }
+    line-height: 158.48%; }
   .section--dark {
     background-image: none; }
   .header {
@@ -1856,9 +1869,9 @@ img {
     max-width: 310px;
     text-align: center; }
   #policyCheckboxControl-error {
-    margin-left: 0; }
-  #policyCheckboxFooter-error {
-    margin-left: 0; } }
+    left: 0; }
+  #policyCheckbox-error {
+    left: 0; } }
 
 @media screen and (max-height: 580px) {
   .hero__scroll-down {

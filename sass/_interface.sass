@@ -160,6 +160,7 @@
       color: $secondary-300
 
 .policy
+  position: relative
   &__checkbox
     opacity: 0
     visibility: hidden
@@ -194,7 +195,20 @@ input
 
 #policyCheckbox
   &-error
-    margin-left: -223px
-    margin-bottom: -45px
+    position: absolute
+    left: 130px
+    bottom: -22px
+#policyCheckboxModal
+  &-error
+    position: absolute
+    left: 0
+    bottom: -22px
+#policyCheckboxControl
+  &-error
+    position: absolute
+    left: 260px
+    bottom: -22px
+    //margin-left: -223px
+    //margin-bottom: -45px
 
 
