@@ -29,7 +29,17 @@
   });
 
 });*/
+const YaMapsShown = false;
+
 $(document).ready(function () {
+
+  $("#menu, #menuFooter").on("click","a", function (event) {
+    event.preventDefault();
+    var id  = $(this).attr('href'),
+        top = $(id).offset().top;
+    $('body,html').animate({scrollTop: top}, 1500);
+});
+
 
   //модальное окно
   var modal = $('.modal'),
@@ -104,7 +114,7 @@ $(document).ready(function () {
 
 
   
-  /*var wow = new WOW(
+  var wow = new WOW(
     {
       boxClass:     'wow',      // animated element css class (default is wow)
       animateClass: 'animate__animated', // animation css class (default is animated)
@@ -119,7 +129,7 @@ $(document).ready(function () {
       resetAnimation: true,     // reset animation on end (default is true)
     }
   );
-  wow.init();*/
+  wow.init();
 
   //Валидация формы
   $('.modal__form').validate({
@@ -170,6 +180,7 @@ $(document).ready(function () {
         url: "send.php",
         data: $('form').serialize(),
         success: function (response) {
+          onclick="ym(64409401,'reachGoal','form'); return true;"
           $(form)[0].reset();
           modal.removeClass('modal--visible');
           thanks.addClass('modal-thanks--visible');
@@ -226,6 +237,7 @@ $(document).ready(function () {
       url: "send.php",
       data: $('form').serialize(),
       success: function (response) {
+        onclick="ym(64409401,'reachGoal','form'); return true;"
         $(form)[0].reset();
         modal.removeClass('modal--visible');
         thanks.addClass('modal-thanks--visible');
@@ -281,20 +293,38 @@ $(document).ready(function () {
       url: "send.php",
       data: $('form').serialize(),
       success: function (response) {
+        onclick="ym(64409401,'reachGoal','form'); return true;"
         $(form)[0].reset();
         modal.removeClass('modal--visible');
         thanks.addClass('modal-thanks--visible');
+
       }
     });
   }
   
   });
 
- 
-
 
   //phone mask
   $('[type=tel]').mask('+7(000) 00-00-000', {placeholder: "+7(___) __-__-___"});
+
+
+  $(window).scroll(function() {
+    if (!YaMapsShown){
+     if($(window).scrollTop() + $(window).height() > $(document).height() - 700) {      
+      showYaMaps();
+      YaMapsShown = true;
+     }
+    }
+ });
+
+ function showYaMaps(){
+  var script   = document.createElement("script");
+  script.type  = "text/javascript";
+  script.src   = "http://api-maps.yandex.ru/services/constructor/1.0/js/?sid=iaFxi9Mln1MO3U5voKWd_CC9HX1G5YO6&width=320&height=250";
+  document.getElementById("YaMaps").appendChild(script);
+ };
+
 
 
   ymaps.ready(function () {

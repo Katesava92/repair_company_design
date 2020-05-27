@@ -28,6 +28,9 @@
       margin-bottom: 4rem
       &:nth-of-type(3)
         margin-bottom: 10rem
+  .logo, .navigation, .contacts, .instagram__link, .button
+    &:hover
+      display: none
 
 @media screen and ( max-width: 950px )
   .row
@@ -219,9 +222,13 @@
         margin-top: 0
         margin-bottom: 42px
     &__video
+      align-items: center
       max-width: 340px
       min-height: 207px
       background: $dark url('../img/video-sm.jpg') center no-repeat
+    &__video > img
+      width: 60px
+      height: 60px
     &__text
       max-width: 340px
       margin-bottom: 30px
@@ -381,7 +388,7 @@
       display: none
     &__wrap
       background: $mobile-bg
-      margin-bottom: 48px
+      margin-bottom: 14px
     &__form
       margin-left: 5px
     &__button
@@ -393,27 +400,31 @@
       line-height: 16px
     &__policy
       margin-left: 0
+      margin-bottom: 65px
     &__subtitle
       max-width: 334px
+      margin-bottom: 21px
       font-size: 18px
       line-height: 138.6%
     &__socials
       margin-bottom: 38px
-      &-image
+      &-image > img
         width: 39px
         height: 39px
-        margin-right: 7px
-        margin-left: 11px
     &__menu
       display: none
     &__map
       max-width: 320px
       width: 100%
       height: 255px
+      margin-top: 0
       margin-bottom: 42px
       order: -1
   .policy
     &__label
+      font-weight: normal
+      font-size: 16px
+      line-height: 22px
       &--center
         justify-content: start
   .col-50
