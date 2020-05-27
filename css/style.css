@@ -1453,8 +1453,12 @@ img {
     margin-bottom: 4rem; }
     .clients__card:nth-of-type(3) {
       margin-bottom: 10rem; }
-  .logo:hover, .navigation:hover, .contacts:hover, .instagram__link:hover, .button:hover {
-    display: none; } }
+  .logo:hover::after {
+    width: 0; }
+  .navigation:hover {
+    display: none; }
+  .contacts:hover, .instagram__link:hover, .button:hover {
+    box-shadow: none; } }
 
 @media screen and (max-width: 950px) {
   .row {

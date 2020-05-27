@@ -28,9 +28,16 @@
       margin-bottom: 4rem
       &:nth-of-type(3)
         margin-bottom: 10rem
-  .logo, .navigation, .contacts, .instagram__link, .button
+  .logo
+    &:hover
+      &::after
+        width: 0
+  .navigation 
     &:hover
       display: none
+  .contacts, .instagram__link, .button
+    &:hover
+      box-shadow: none
 
 @media screen and ( max-width: 950px )
   .row
