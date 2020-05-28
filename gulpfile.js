@@ -77,9 +77,7 @@ function minimg() {
     .pipe(tinypng({
       key: 'qDT3PsZK01RRJwfVj80dQ189Kj1v7ZXc'
   }))
-    .pipe(dest("dist/img/")),
-    src("img/**/*.svg")
-    .pipe(dest('dist/img/'));
+    .pipe(dest("dist/img/"));
 };
 
 function php() {
@@ -93,4 +91,9 @@ function fonts() {
   return src("fonts/**/**")
     .pipe(dest('dist/fonts/'));
 };
-exports.build = series(min, minjs, minhtml, php, fonts);
+
+function svg() {
+  return src("img/**/*.svg")
+    .pipe(dest('dist/img/'));
+};
+exports.build = series(min, minjs, minhtml, php, fonts, svg);

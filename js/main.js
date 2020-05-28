@@ -29,7 +29,6 @@
   });
 
 });*/
-const YaMapsShown = false;
 
 $(document).ready(function () {
 
@@ -306,8 +305,25 @@ $(document).ready(function () {
 
 
   //phone mask
-  $('[type=tel]').mask('+7(000) 00-00-000', {placeholder: "+7(___) __-__-___"});
+  $('[type=tel]').mask('+7(000) 00-00-000');
 
+  var player;
+  $('.video__play').on('click', function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '434',
+      width: '100%',
+      videoId: '8awdQRP816c',
+      events: {
+        'onReady': videoPlay,
+      }
+    });
+  })
+
+  function videoPlay(event) {
+    event.target.playVideo();
+  };
+
+  YaMapsShown = false;
 
   $(window).scroll(function() {
     if (!YaMapsShown){
@@ -321,50 +337,13 @@ $(document).ready(function () {
  function showYaMaps(){
   var script   = document.createElement("script");
   script.type  = "text/javascript";
-  script.src   = "http://api-maps.yandex.ru/services/constructor/1.0/js/?sid=iaFxi9Mln1MO3U5voKWd_CC9HX1G5YO6&width=320&height=250";
-  document.getElementById("YaMaps").appendChild(script);
+  script.src   = "js/map.js";
+  document.getElementById("map").appendChild(script);
  };
 
 
 
-  ymaps.ready(function () {
-    var myMap = new ymaps.Map('map', {
-            center: [54.711553, 20.508505],
-            zoom: 15
-        }, {
-            searchControlProvider: 'yandex#search'
-        }),
-
-        // Создаём макет содержимого.
-        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-        ),
-
-        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-            hintContent: 'Наша организация',
-            balloonContent: 'Ленинский проспект, 30, Калининград, Россия, 236006'
-        }, {
-            // Опции.
-            // Необходимо указать данный тип макета.
-            iconLayout: 'default#image',
-            // Своё изображение иконки метки.
-            iconImageHref: 'img/location.png',
-            // Размеры метки.
-            iconImageSize: [32, 32],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
-            iconImageOffset: [-5, -38]
-        });
-    myMap.geoObjects
-        .add(myPlacemark);
-    myMap.behaviors
-        .disable(['scrollZoom','drag']);
-    myMap.container.fitToViewport();
-});
-
-
-
-
+  
 
 
 
