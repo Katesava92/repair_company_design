@@ -5,29 +5,21 @@
     modal.classList.toggle('modal--visible');
   } //функция которая переключает класс, включает если его нет, и выкл если он есть
   const closeBtn = document.querySelector('.modal__close');
-
-
-
   modalBtn.forEach(element => {
     element.addEventListener('click', toggleModal);
   });
   closeBtn.addEventListener('click', toggleModal);
-
-
-
   document.addEventListener('keydown', function(e) {
     if (e.keyCode == 27) {
       modal.classList.toggle('modal--visible');
     }
     
   });
-
   document.addEventListener('click', function(window) {
     if (window.target == modal) {
       modal.classList.toggle('modal--visible');
     }
   });
-
 });*/
 
 $(document).ready(function () {
@@ -326,127 +318,27 @@ $(document).ready(function () {
     event.target.playVideo();
   };
 
-  //Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки при наведении)
-  var check_if_load = false;
-  //Необходимые переменные для того, чтобы задать координаты на Яндекс.Карте
-  var myMapTemp, myPlacemarkTemp;
+  YaMapsShown = false;
+
+  $(window).scroll(function() {
+    if (!YaMapsShown){
+     if($(window).scrollTop() + $(window).height() > $(document).height() - 700) {      
+      showYaMaps();
+      YaMapsShown = true;
+     }
+    }
+ });
+
+ function showYaMaps(){
+  var script   = document.createElement("script");
+  script.type  = "text/javascript";
+  script.src   = "js/map.js";
+  document.getElementById("map").appendChild(script);
+ };
 
 
-  //Функция создания карты сайта и затем вставки ее в блок с идентификатором &#34;map-yandex&#34;
-function init () {
-  var myMapTemp = new ymaps.Map("map-yandex", {
-    center: [54.711553, 20.508505],
-    zoom: 15 // коэффициент приближения карты
-  });
-  var myPlacemarkTemp = new ymaps.Placemark([54.711553, 20.508505], {
-    hintContent: 'Наша организация',
-    balloonContent: 'Ленинский проспект, 30, Калининград, Россия, 236006'
-}, {
-      // Опции.
-      // Необходимо указать данный тип макета.
-      iconLayout: 'default#image',
-      // Своё изображение иконки метки.
-      iconImageHref: 'img/location.png',
-      // Размеры метки.
-      iconImageSize: [32, 32],
-      // Смещение левого верхнего угла иконки относительно
-      // её "ножки" (точки привязки).
-      iconImageOffset: [-5, -38]
-  });
-  myMapTemp.geoObjects.add(myPlacemarkTemp);
-  myMapTemp.behaviors
-      .disable(['scrollZoom','drag']);
-  myMapTemp.container.fitToViewport(); // помещаем флажок на карту
- 
-  // Получаем первый экземпляр коллекции слоев, потом первый слой коллекции
-  var layer = myMapTemp.layers.get(0).get(0);
- 
-  // Решение по callback-у для определения полной загрузки карты
-  waitForTilesLoad(layer).then(function() {
 
-  });
-}
- 
-// Функция для определения полной загрузки карты (на самом деле проверяется загрузка тайлов) 
-function waitForTilesLoad(layer) {
-  return new ymaps.vow.Promise(function (resolve, reject) {
-    var tc = getTileContainer(layer), readyAll = true;
-    tc.tiles.each(function (tile, number) {
-      if (!tile.isReady()) {
-        readyAll = false;
-      }
-    });
-    if (readyAll) {
-      resolve();
-    } else {
-      tc.events.once("ready", function() {
-        resolve();
-      });
-    }
-  });
-}
- 
-function getTileContainer(layer) {
-  for (var k in layer) {
-    if (layer.hasOwnProperty(k)) {
-      if (
-        layer[k] instanceof ymaps.layer.tileContainer.CanvasContainer
-        || layer[k] instanceof ymaps.layer.tileContainer.DomContainer
-      ) {
-        return layer[k];
-      }
-    }
-  }
-  return null;
-}
- 
-// Функция загрузки API Яндекс.Карт по требованию (в нашем случае при наведении)
-function loadScript(url, callback){
-  var script = document.createElement("script");
- 
-  if (script.readyState){  // IE
-    script.onreadystatechange = function(){
-      if (script.readyState == "loaded" ||
-              script.readyState == "complete"){
-        script.onreadystatechange = null;
-        callback();
-      }
-    };
-  } else {  // Другие браузеры
-    script.onload = function(){
-      callback();
-    };
-  }
- 
-  script.src = url;
-  document.getElementsByTagName("head")[0].appendChild(script);
-}
- 
-// Основная функция, которая проверяет когда мы навели на блок с классом &#34;ymap-container&#34;
-var ymap = function() {
-  $('.ymap-container').mouseenter(function(){
-      if (!check_if_load) { // проверяем первый ли раз загружается Яндекс.Карта, если да, то загружаем
- 
-	  	// Чтобы не было повторной загрузки карты, мы изменяем значение переменной
-        check_if_load = true; 
- 
-		// Загружаем API Яндекс.Карт
-        loadScript("https://api-maps.yandex.ru/2.1/?apikey=e60cd017-ce1b-425a-9351-8480ad150ce4&lang=ru_RU", function(){
-           // Как только API Яндекс.Карт загрузились, сразу формируем карту и помещаем в блок с идентификатором &#34;map-yandex&#34;
-           ymaps.load(init);
-        });                
-      }
-    }
-  );  
-}
- 
-$(function() {
- 
-  //Запускаем основную функцию
-  ymap();
- 
-});
-    
+  
 
 
 
@@ -455,5 +347,3 @@ $(function() {
 
 
 });
-
-

@@ -6,6 +6,19 @@
   .navigation
     &__item
       margin-right: 1.5rem
+  .clients
+    padding-bottom: 20rem
+    &__row
+      flex-direction: column
+      align-items: center
+    &__card
+      margin-bottom: 6rem
+  .team
+    &__row
+      flex-direction: column
+      align-items: center
+    &__card
+      margin-bottom: 9rem
 
 @media screen and ( max-width: 992px )
   .hero
@@ -13,6 +26,9 @@
       display: none
     &__content
       margin-left: 0
+    &__scroll-down
+      &:hover
+        color: $white
   .navigation
     display: none
   .button
@@ -20,14 +36,12 @@
       margin-right: 10px
       margin-bottom: 10px
       opacity: 0.7
-  .clients
-    &__row
-      flex-direction: column
-      align-items: center
-    &__card
-      margin-bottom: 4rem
-      &:nth-of-type(3)
-        margin-bottom: 10rem
+    &--primary
+      &:hover
+        box-shadow: none
+    &--outline
+      &:hover
+        box-shadow: none
   .logo
     &:hover
       &::after
@@ -35,9 +49,24 @@
   .navigation 
     &:hover
       display: none
-  .contacts, .instagram__link, .button
+  .contacts__phone, .instagram__link
     &:hover
       box-shadow: none
+  .footer
+    &__phone
+      &:hover
+        box-shadow: none
+    &__socials
+      &-image > img
+        &:hover
+          transform: none
+  .video
+    &__play
+      &:hover
+        transform: none
+
+  
+
 
 @media screen and ( max-width: 950px )
   .row
@@ -108,6 +137,8 @@
     &__button
       align-self: center
       order: 1
+  .clients
+    padding-bottom: 7rem
   .footer
     &__title
       font-size: 20px
@@ -157,7 +188,7 @@
     &--dark
       background-image: none
   .header
-    background: $mobile-bg
+    background: $black
   .logo
     font-size: 13px
     line-height: 14px
@@ -199,9 +230,12 @@
   .projects
     padding-top: 38px
     padding-bottom: 0
-    background: $mobile-bg
+    background: $black
     &__col-50
       padding-left: 4px
+  .slide-img
+    width: 100%
+    height: 202px
   .swiper
     &-wrapper
       margin-bottom: 23px
@@ -223,7 +257,7 @@
   .control
     padding-top: 25px
     padding-bottom: 0
-    background: $mobile-bg
+    background: $black
     &__section
       &-title
         margin-top: 0
@@ -313,7 +347,7 @@
         padding-left: 44px
   .design
     padding-top: 45px
-    background: $mobile-bg
+    background: $black
     color: $white
     &__section
       &-title
@@ -352,7 +386,7 @@
     display: none
   .team
     padding-top: 0
-    background: $mobile-bg
+    background: $black
     &__section
       &-title
         margin-bottom: 82px
@@ -368,9 +402,6 @@
     &__card
       margin-bottom: 129px
       margin-left: 35px
-      //&-image
-        //&-wrap
-          //width: 304px
       &-text
         margin-top: -81px
         min-width: 233px
@@ -390,14 +421,12 @@
   .clients
     display: none
   .footer
-    background: $mobile-bg
+    background: $black
     &::before
       display: none
     &__wrap
-      background: $mobile-bg
+      background: $black
       margin-bottom: 14px
-    &__form
-      margin-left: 5px
     &__button
       max-width: 340px
       width: 100%
@@ -436,13 +465,6 @@
         justify-content: start
   .col-50
     width: 100%
-  .button
-    &-up
-      width: 39px
-      height: 39px
-      border: 3px solid $primary
-      box-shadow: 0px 5px 15px rgba($primary, 0.3)
-      background: transparent url('../img/arrow-down.svg') no-repeat center / 1.5rem
 
   .modal
     &__dialog  
@@ -470,6 +492,10 @@
       &__title
         max-width: 310px
         text-align: center
+  .input
+    border-bottom: 1px solid rgba($white, 0.7)
+  .label
+    color: rgba($white, 0.5)
   #policyCheckboxControl
     &-error
       left: 0
@@ -486,3 +512,47 @@
     &__scroll-down
       display: none
   
+@media screen and ( max-height: 320px )
+  .hero
+    padding-bottom: 32rem
+  .modal
+    &__dialog
+      max-width: 520px
+      width: 100%
+      max-height: 310px
+      padding: 10px 20px 20px
+    &__title
+      max-width: 520px
+      width: 100%
+      margin-bottom: 0
+    &__policy
+      margin-bottom: 12px
+    &__button
+      max-width: 200px
+      width: 100%
+      padding: 10px 20px
+      
+
+  
+@media screen and ( max-height: 320px )
+  .hero
+    padding-bottom: 32rem
+  .modal
+    &__dialog
+      max-width: 520px
+      width: 100%
+      max-height: 310px
+      padding: 10px 20px 20px
+    &__title
+      max-width: 520px
+      width: 100%
+      margin-bottom: 0
+    &__policy
+      margin-bottom: 12px
+    &__button
+      max-width: 200px
+      width: 100%
+      padding: 10px 20px
+    &__input
+      &-group
+        margin-bottom: 20px

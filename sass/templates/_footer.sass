@@ -90,8 +90,9 @@
       &:hover
         transform: scale(1.3)
   &__map
+    position: relative
     max-width: 925px
-    width: 100%
+    width: 100%!important
     height: 465px
     margin: auto
     margin-bottom: 4.714rem
@@ -103,3 +104,22 @@
     &-wrap
       display: flex
       flex-direction: column
+.ymap-container 
+  position: relative
+  margin: 
+  overflow: hidden
+  cursor: pointer
+  background: url('../img/map.png') #ffffff no-repeat
+  background-position: center center
+  background-size: cover
+  box-shadow: 0 0 2em  0 rgba(0,0,0,.2)
+
+/* Блок, в котором появится Яндекс.Карта */
+#map-yandex
+  position: relative
+  z-index: 7
+  width: 100%
+  height: 465px
+  cursor: pointer
+  background-color: transparent
+

@@ -10,33 +10,14 @@
   &__card
     margin-bottom: 27.5rem
     &-text
-      padding: 3.286rem 0 4.5rem 2.143rem
+      padding: 2.143rem 0 4.5rem 2.143rem
     &-title
-      position: relative
-      max-width: 14.571rem
-      margin: auto
-      margin-bottom: 2rem
-      padding-left: 0.786rem
+      max-width: 14.428rem
+      margin-left: 22px
       line-height: 1.643rem
-      color: $secondary-100
-      &::before
-        content: ''
-        position: absolute
-        top: -14px
-        left: -84px
-        width: 76px
-        height: 76px
-        background: url('../img/clients/client-1.jpg') no-repeat center
-        border-radius: 50%
-      &--one
-        &::before
-          background: url('../img/clients/client-2.jpg') no-repeat center
-      &--two
-        &::before
-          background: url('../img/clients/client-3.jpg') no-repeat center
     &-description
       max-width: 23.143rem
-      margin-top: 2.214rem
+      margin-top: 0
       font-family: 'Futura Book', sans-serif
       font-style: normal
       font-weight: normal 
@@ -65,3 +46,13 @@
 .pricetags
   margin-top: -1.429rem
   margin-left: 0.714rem
+.title
+  &-wrap
+    display: flex
+    align-items: center
+    margin-bottom: 17px
+.title
+  &-wrap > img
+    width: 76px
+    height: 76px
+    border-radius: 50%

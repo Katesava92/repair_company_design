@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Futura Book';
   src: url("../fonts/futura/FuturaBookC.woff") format("woff"), url("../fonts/futura/FuturaBookC.woff2") format("woff2");
@@ -348,14 +349,15 @@ template {
     bottom: 0;
     z-index: 3;
     display: none;
-    margin-right: 100px;
+    margin-right: 10px;
     margin-bottom: 40px;
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
     border: 5px solid #E3B873;
     border-radius: 50%;
-    background: transparent url("../img/arrow-down.svg") no-repeat center/2.5rem;
-    transform: rotate(180deg); }
+    background: transparent url("../img/arrow-down.svg") no-repeat center/1.5rem;
+    transform: rotate(180deg);
+    opacity: 0.7; }
     .button-up:hover {
       box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.3);
       cursor: pointer; }
@@ -923,6 +925,10 @@ img {
 .swiper-button-next {
   background: url("../img/arrow-next.svg") no-repeat center; }
 
+.slide-img {
+  width: 100%;
+  height: 406px; }
+
 .swiper-container-horizontal > .swiper-pagination-bullets {
   width: auto;
   bottom: 0; }
@@ -1007,6 +1013,7 @@ img {
   margin: 0 auto;
   z-index: 3; }
   .video__play:hover {
+    transform: scale(1.2);
     cursor: pointer; }
 
 .types__section-title {
@@ -1064,7 +1071,7 @@ img {
   .design__card-pricetag {
     position: absolute;
     left: 0;
-    bottom: -1.214rem;
+    bottom: -1.857rem;
     max-width: 228px;
     width: 100%;
     padding: 17px 67px 17px 33px;
@@ -1103,24 +1110,25 @@ img {
     margin: auto;
     padding-top: 1.143rem; }
   .team__card {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 6.929rem; }
-    .team__card::before {
-      content: '';
-      position: absolute;
-      top: -35px;
-      left: 29px;
-      width: 70px;
-      height: 70px;
-      background: #E3B873 url(../img/team/idea.svg) no-repeat center;
-      box-shadow: 0px 5px 20px rgba(227, 184, 115, 0.5); }
-    .team__card--one::before {
-      background: #E3B873 url(../img/team/pen.svg) no-repeat center; }
-    .team__card--second::before {
-      background: #E3B873 url(../img/team/portfolio.svg) no-repeat center; }
+    .team__card-image-wrap {
+      position: relative; }
+      .team__card-image-wrap::before {
+        content: '';
+        position: absolute;
+        top: -35px;
+        left: -30px;
+        width: 70px;
+        height: 70px;
+        background: #E3B873 url(../img/team/idea.svg) no-repeat center;
+        box-shadow: 0px 5px 20px rgba(227, 184, 115, 0.5); }
+      .team__card-image-wrap--one::before {
+        background: #E3B873 url(../img/team/pen.svg) no-repeat center; }
+      .team__card-image-wrap--second::before {
+        background: #E3B873 url(../img/team/portfolio.svg) no-repeat center; }
     .team__card-text {
       position: relative;
       max-width: 16.929rem;
@@ -1179,31 +1187,14 @@ img {
   .clients__card {
     margin-bottom: 27.5rem; }
     .clients__card-text {
-      padding: 3.286rem 0 4.5rem 2.143rem; }
+      padding: 2.143rem 0 4.5rem 2.143rem; }
     .clients__card-title {
-      position: relative;
-      max-width: 14.571rem;
-      margin: auto;
-      margin-bottom: 2rem;
-      padding-left: 0.786rem;
-      line-height: 1.643rem;
-      color: #181818; }
-      .clients__card-title::before {
-        content: '';
-        position: absolute;
-        top: -14px;
-        left: -84px;
-        width: 76px;
-        height: 76px;
-        background: url("../img/clients/client-1.jpg") no-repeat center;
-        border-radius: 50%; }
-      .clients__card-title--one::before {
-        background: url("../img/clients/client-2.jpg") no-repeat center; }
-      .clients__card-title--two::before {
-        background: url("../img/clients/client-3.jpg") no-repeat center; }
+      max-width: 14.428rem;
+      margin-left: 22px;
+      line-height: 1.643rem; }
     .clients__card-description {
       max-width: 23.143rem;
-      margin-top: 2.214rem;
+      margin-top: 0;
       font-family: 'Futura Book', sans-serif;
       font-style: normal;
       font-weight: normal;
@@ -1233,6 +1224,16 @@ img {
 .pricetags {
   margin-top: -1.429rem;
   margin-left: 0.714rem; }
+
+.title-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px; }
+
+.title-wrap > img {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%; }
 
 .footer {
   position: relative;
@@ -1324,8 +1325,9 @@ img {
     .footer__socials-image > img:hover {
       transform: scale(1.3); }
   .footer__map {
+    position: relative;
     max-width: 925px;
-    width: 100%;
+    width: 100% !important;
     height: 465px;
     margin: auto;
     margin-bottom: 4.714rem; }
@@ -1336,6 +1338,24 @@ img {
   .footer .content-wrap {
     display: flex;
     flex-direction: column; }
+
+.ymap-container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: url("../img/map.png") #ffffff no-repeat;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: 0 0 2em 0 rgba(0, 0, 0, 0.2); }
+
+/* Блок, в котором появится Яндекс.Карта */
+#map-yandex {
+  position: relative;
+  z-index: 7;
+  width: 100%;
+  height: 465px;
+  cursor: pointer;
+  background-color: transparent; }
 
 .modal {
   position: fixed;
@@ -1459,32 +1479,49 @@ img {
 
 @media screen and (max-width: 1200px) {
   .navigation__item {
-    margin-right: 1.5rem; } }
+    margin-right: 1.5rem; }
+  .clients {
+    padding-bottom: 20rem; }
+    .clients__row {
+      flex-direction: column;
+      align-items: center; }
+    .clients__card {
+      margin-bottom: 6rem; }
+  .team__row {
+    flex-direction: column;
+    align-items: center; }
+  .team__card {
+    margin-bottom: 9rem; } }
 
 @media screen and (max-width: 992px) {
   .hero__instagram {
     display: none; }
   .hero__content {
     margin-left: 0; }
+  .hero__scroll-down:hover {
+    color: #ffffff; }
   .navigation {
     display: none; }
   .button-up {
     margin-right: 10px;
     margin-bottom: 10px;
     opacity: 0.7; }
-  .clients__row {
-    flex-direction: column;
-    align-items: center; }
-  .clients__card {
-    margin-bottom: 4rem; }
-    .clients__card:nth-of-type(3) {
-      margin-bottom: 10rem; }
+  .button--primary:hover {
+    box-shadow: none; }
+  .button--outline:hover {
+    box-shadow: none; }
   .logo:hover::after {
     width: 0; }
   .navigation:hover {
     display: none; }
-  .contacts:hover, .instagram__link:hover, .button:hover {
-    box-shadow: none; } }
+  .contacts__phone:hover, .instagram__link:hover {
+    box-shadow: none; }
+  .footer__phone:hover {
+    box-shadow: none; }
+  .footer__socials-image > img:hover {
+    transform: none; }
+  .video__play:hover {
+    transform: none; } }
 
 @media screen and (max-width: 950px) {
   .row {
@@ -1545,6 +1582,8 @@ img {
   .control__button {
     align-self: center;
     order: 1; }
+  .clients {
+    padding-bottom: 7rem; }
   .footer__title {
     font-size: 20px;
     line-height: 28px;
@@ -1586,7 +1625,7 @@ img {
   .section--dark {
     background-image: none; }
   .header {
-    background: #252525; }
+    background: #181818; }
   .logo {
     font-size: 13px;
     line-height: 14px; }
@@ -1626,9 +1665,12 @@ img {
   .projects {
     padding-top: 38px;
     padding-bottom: 0;
-    background: #252525; }
+    background: #181818; }
     .projects__col-50 {
       padding-left: 4px; }
+  .slide-img {
+    width: 100%;
+    height: 202px; }
   .swiper-wrapper {
     margin-bottom: 23px; }
   .swiper-slide__text {
@@ -1648,7 +1690,7 @@ img {
   .control {
     padding-top: 25px;
     padding-bottom: 0;
-    background: #252525; }
+    background: #181818; }
     .control__section-title {
       margin-top: 0;
       margin-bottom: 42px; }
@@ -1736,7 +1778,7 @@ img {
         padding-left: 44px; }
   .design {
     padding-top: 45px;
-    background: #252525;
+    background: #181818;
     color: #ffffff; }
     .design__section-title {
       margin-bottom: 0; }
@@ -1773,7 +1815,7 @@ img {
     display: none; }
   .team {
     padding-top: 0;
-    background: #252525; }
+    background: #181818; }
     .team__section-title {
       margin-bottom: 82px;
       font-size: 22px;
@@ -1807,14 +1849,12 @@ img {
   .clients {
     display: none; }
   .footer {
-    background: #252525; }
+    background: #181818; }
     .footer::before {
       display: none; }
     .footer__wrap {
-      background: #252525;
+      background: #181818;
       margin-bottom: 14px; }
-    .footer__form {
-      margin-left: 5px; }
     .footer__button {
       max-width: 340px;
       width: 100%;
@@ -1852,12 +1892,6 @@ img {
       justify-content: start; }
   .col-50 {
     width: 100%; }
-  .button-up {
-    width: 39px;
-    height: 39px;
-    border: 3px solid #E3B873;
-    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.3);
-    background: transparent url("../img/arrow-down.svg") no-repeat center/1.5rem; }
   .modal__dialog {
     background: #131313;
     padding: 36px 20px 20px; }
@@ -1881,6 +1915,10 @@ img {
   .modal-thanks__title {
     max-width: 310px;
     text-align: center; }
+  .input {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7); }
+  .label {
+    color: rgba(255, 255, 255, 0.5); }
   #policyCheckboxControl-error {
     left: 0; }
   #policyCheckbox-error {
@@ -1889,3 +1927,43 @@ img {
 @media screen and (max-height: 580px) {
   .hero__scroll-down {
     display: none; } }
+
+@media screen and (max-height: 320px) {
+  .hero {
+    padding-bottom: 32rem; }
+  .modal__dialog {
+    max-width: 520px;
+    width: 100%;
+    max-height: 310px;
+    padding: 10px 20px 20px; }
+  .modal__title {
+    max-width: 520px;
+    width: 100%;
+    margin-bottom: 0; }
+  .modal__policy {
+    margin-bottom: 12px; }
+  .modal__button {
+    max-width: 200px;
+    width: 100%;
+    padding: 10px 20px; } }
+
+@media screen and (max-height: 320px) {
+  .hero {
+    padding-bottom: 32rem; }
+  .modal__dialog {
+    max-width: 520px;
+    width: 100%;
+    max-height: 310px;
+    padding: 10px 20px 20px; }
+  .modal__title {
+    max-width: 520px;
+    width: 100%;
+    margin-bottom: 0; }
+  .modal__policy {
+    margin-bottom: 12px; }
+  .modal__button {
+    max-width: 200px;
+    width: 100%;
+    padding: 10px 20px; }
+  .modal__input-group {
+    margin-bottom: 20px; } }

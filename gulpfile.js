@@ -46,14 +46,16 @@ exports.serve = bs;
 
 
 function min() {
-  return src("./css/*.css")
+  return src(["css/*.css", "!css/**.min.css"])
     .pipe(cleanCSS({compatibility: 'ie9,-properties.merging'}))
     //.pipe(renameCss({suffix:".min"}))
+    .pipe(dest("dist/css/")),
+    src("css/**.min.css")
     .pipe(dest("dist/css/"));
 };
 
 function minjs() {
-  return src(["js/**.js", "!js/**.min.js"])
+  return src(["js/*.js", "!js/**.min.js"])
   .pipe(minify({
     ext:{
         min:'.js'
