@@ -96,6 +96,7 @@ $(document).ready(function () {
 
   var mySwiper = new Swiper ('.swiper-container', {
     loop: true,
+    spaceBetween: 20,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -110,8 +111,8 @@ $(document).ready(function () {
   var prev = $('.swiper-button-prev');
   var bullets = $('.swiper-pagination');
 //делаем чтобы расстояние в пагинации слайдов рассчитывалось авто вне зависимости от кол-ва слайдов
-  next.css('left', prev.width() + 30 + bullets.width() + 40)
-  bullets.css('left', prev.width() + 30)
+  next.css('left', prev.width() + 20 + bullets.width() + 20)
+  bullets.css('left', prev.width() + 20)
 
 
 
@@ -144,7 +145,7 @@ $(document).ready(function () {
       },
       userPhone: {
         required: true,
-        minlength:18
+        minlength: 18
       },  // simple rule, converted to {required:true}, строчное правило
       userEmail: {
         required: true,
@@ -202,7 +203,7 @@ $(document).ready(function () {
       },
       userPhone: {
         required: true,
-        minlength:18
+        minlength: 18
       },  // simple rule, converted to {required:true}, строчное правило
       userEmail: {
         required: true,
@@ -261,7 +262,7 @@ $(document).ready(function () {
       },
       userPhone: {
         required: true,
-        minlength:18
+        minlength: 18
       },
       // compound rule, правило-объект (блок)
       userQuestion: "required",
@@ -306,9 +307,24 @@ $(document).ready(function () {
   
   });
 
+  //$(window).unload(function(){ 
+  //  $('.modal__form')[0].reset();
+  //});
+  //$(window).unload(function(){ 
+  //  $('.control__form')[0].reset();
+  //});
+  //$(window).unload(function(){ 
+  //  $('.footer__form')[0].reset();
+  //});
+
 
   //phone mask
-  $('[type=tel]').mask('+7 (999) 99-99-999');
+  $('[type=tel]').mask('+7 (999) 999-99-99', {'translation': {9: {pattern: /[0-9*]/}}});
+
+  //$('[type=tel]').on("keydown", function (e) {
+  //  return e.which !== 32;
+  //});​​​​​
+
 
   var player;
   $('.video__play').on('click', function onYouTubeIframeAPIReady() {
